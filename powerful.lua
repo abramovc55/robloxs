@@ -1410,35 +1410,6 @@ do
         Fluent.MinimizeKeybind = Fluent.Options.MinimizeKey
     end
 
-    local NotificationsWarningsSection = Tabs.Settings:AddSection("Notifications & Warnings")
-
-    local PerformanceSection = Tabs.Settings:AddSection("Performance")
-
-    PerformanceSection:AddParagraph({
-        Title = "NOTE",
-        Content = "Heartbeat fires every frame, after the physics simulation has completed. RenderStepped fires every frame, prior to the frame being rendered. Stepped fires every frame, prior to the physics simulation."
-    })
-
-    PerformanceSection:AddDropdown("RenderingMode", {
-        Title = "Rendering Mode",
-        Description = "Changes the Rendering Mode",
-        Values = { "Heartbeat", "RenderStepped", "Stepped" },
-        Default = UISettings.RenderingMode,
-        Callback = function(Value)
-            UISettings.RenderingMode = Value
-            InterfaceManager:ExportSettings()
-            Window:Dialog({
-                Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
-                Content = "Changes will take effect after the Restart!",
-                Buttons = {
-                    {
-                        Title = "Confirm"
-                    }
-                }
-            })
-        end
-    })
-
     if getfenv().isfile and getfenv().readfile and getfenv().writefile and getfenv().delfile then
         local ConfigurationManager = Tabs.Settings:AddSection("Configuration Manager")
 
