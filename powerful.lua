@@ -1093,12 +1093,6 @@ do
     if DEBUG or getfenv().Drawing and getfenv().Drawing.new then
         --Tabs.Visuals = Window:AddTab({ Title = "Visuals", Icon = "box" })
 
-        Tabs.Visuals:AddParagraph({
-            Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
-            Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/ttwizz/Open-Aimbot"
-        })
-
-        local FoVSection = Tabs.Visuals:AddSection("FoV")
 
         local FoVToggle = FoVSection:AddToggle("FoV", { Title = "FoV", Description = "Graphically Displays the FoV Radius", Default = Configuration.FoV })
         FoVToggle:OnChanged(function(Value)
@@ -1158,7 +1152,6 @@ do
             end
         })
 
-        local ESPSection = Tabs.Visuals:AddSection("ESP")
 
         local SmartESPToggle = ESPSection:AddToggle("SmartESP", { Title = "Smart ESP", Description = "Does not ESP the Whitelisted Players", Default = Configuration.SmartESP })
         SmartESPToggle:OnChanged(function(Value)
@@ -1311,7 +1304,6 @@ do
             Configuration.ESPUseTeamColour = Value
         end)
 
-        local VisualsSection = Tabs.Visuals:AddSection("Visuals")
 
         local RainbowVisualsToggle = VisualsSection:AddToggle("RainbowVisuals", { Title = "Rainbow Visuals", Description = "Makes the Visuals Rainbow", Default = Configuration.RainbowVisuals })
         RainbowVisualsToggle:OnChanged(function(Value)
