@@ -1412,19 +1412,6 @@ do
 
     local NotificationsWarningsSection = Tabs.Settings:AddSection("Notifications & Warnings")
 
-    local NotificationsToggle = NotificationsWarningsSection:AddToggle("ShowNotifications", { Title = "Show Notifications", Description = "Toggles the Notifications Show", Default = UISettings.ShowNotifications })
-    NotificationsToggle:OnChanged(function(Value)
-        Fluent.ShowNotifications = Value
-        UISettings.ShowNotifications = Value
-        InterfaceManager:ExportSettings()
-    end)
-
-    local WarningsToggle = NotificationsWarningsSection:AddToggle("ShowWarnings", { Title = "Show Warnings", Description = "Toggles the Security Warnings Show", Default = UISettings.ShowWarnings })
-    WarningsToggle:OnChanged(function(Value)
-        UISettings.ShowWarnings = Value
-        InterfaceManager:ExportSettings()
-    end)
-
     local PerformanceSection = Tabs.Settings:AddSection("Performance")
 
     PerformanceSection:AddParagraph({
