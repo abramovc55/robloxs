@@ -1091,7 +1091,7 @@ do
     })
 
     if DEBUG or getfenv().Drawing and getfenv().Drawing.new then
-        Tabs.Visuals = Window:AddTab({ Title = "Visuals", Icon = "box" })
+        --Tabs.Visuals = Window:AddTab({ Title = "Visuals", Icon = "box" })
 
         Tabs.Visuals:AddParagraph({
             Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
